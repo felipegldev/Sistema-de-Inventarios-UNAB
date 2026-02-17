@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Cabezera de metadatos-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Hoja de estilos CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Link de Boostrap API-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>Inventario Unab</title>
+</head>
+<!--Cuerpo de la página web-->
+<body>
+    <!--Barra de navegación (navbar)-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!--Contenedor de navbar-->
+        <div class="container-fluid">
+            <!--Logo institucional-->
+            <a class="navbar-brand ms-auto ms-lg-0 order-lg-0 order-1" href="index.html">
+                <img src="img/logoUnab.jpg" alt="logoUnab" id="logoUnab">
+            </a>
+            <!--Hamburguesa (botón de navegación en celular)-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Contenido que se despliega al presionar la hamburguesa-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <!--Lista ordenada de items-->
+            <ul class="navbar-nav">
+                <!--Item 1-->
+                <li class="nav-item">
+                    <!--Enlace para Asignación de equipos-->
+                    <a class="nav-link" href="asignacion_equipo.html">Asignacíon de equipos</a>
+                </li>
+                <!--Item 2-->
+                <li class="nav-item">
+                    <!--Enlace para Termino OT-->
+                    <a class="nav-link" href="termino_ot.html">Termino OT</a>
+                </li>
+                <!--Item 3-->
+                <li class="nav-item">
+                    <!--Enlace para Checklist Laboratorio-->
+                    <a class="nav-link" href="checklist_lab.html">Checklist Laboratorio/Sala</a>
+                </li>
+                <!--Item 4-->
+                <li class="nav-item">
+                    <!--Enlace para Estado Servidores-->
+                    <a class="nav-link" href="est_ser.html">Estado Servidores</a>
+                </li>
+                <!--Item 5-->
+                <li class="nav-item">
+                    <!--Enlace para historial de inventario-->
+                    <a class="nav-link" href="hist_invtentario.html">Historial de Inventario</a>
+                </li>
+                <!--Item 6-->
+                <li class="nav-item">
+                    <!--Enlace para arriendo y compra de equipos-->
+                    <a class="nav-link" href="est_ser.html">Arriendo y compra de equipos</a>
+                </li>
+                <!--Item 7-->
+                <li class="nav-item">
+                    <!--Enlace para arriendo y compra de equipos-->
+                    <a class="nav-link" href="help.html">Ayuda</a>
+                </li>
+            </ul>
+            </div>
+            <!--Mensaje de bienvenida para el usuario-->
+            <span> Bienvenido Usuario </span>
+            <!--Imagen de usuario-->
+            <img src="img/usuario.png" alt="usuario" id="usuario">
+        </div>
+    </nav>
+    <!--Formulario de asignación de equipo-->
+    <div class="contenedor-form">
+        <h1>Datos de Asignación</h1>
+        <hr>
+        <form>
+            <!--Campo para N° Ticket-->
+            <div class="mb-3">
+                <label for="nro_ticket" class="form-label">N° Ticket</label>
+                <input type="string" class="form-control" id="nro_ticket">
+            </div>
+            <!--Campo para Nombre-->
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="string" class="form-control" id="nombre">
+            </div>
+            <!--Campo para Unidad-->
+            <div class="mb-3">
+                <label for="unidad" class="form-label">Unidad</label>
+                <input type="string" class="form-control" id="unidad">
+            </div>
+            <!--Campo para Correo electronico-->
+            <div class="mb-3">
+                <label for="correo" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
+            </div>
+            <!--Campo para RUT-->
+            <div class="mb-3">
+                <label for="rut" class="form-label">RUT</label>
+                <input type="number" class="form-control" id="rut">
+            </div>
+            <!--Campo para Modalidad de Trabajo-->
+            <div class="mb-3">
+                <label for="modalidad" class="form-label">Modalidad de trabajo</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Presencial</option>
+                    <option value="1">Remota</option>
+                    <option value="2">Hibrida</option>
+                </select>
+            </div>
+            <!--Campo para Dirección General-->
+            <div class="mb-3">
+                <label for="dir_general" class="form-label">Direccion General</label>
+                <input type="string" class="form-control" id="dir_general">
+            </div>
+            <!--Campo para Fecha de recepción-->
+            <div class="mb-3">
+                <label for="fecha_recep" class="form-label">Fecha Recepcion</label>
+                <input type="date" class="form-control" id="fecha_recep">
+            </div>
+            <!--Campo para Cargo-->
+            <div class="mb-3">
+                <label for="cargo" class="form-label">Cargo</label>
+                <input type="string" class="form-control" id="cargo">
+            </div>
+            <!--Campo para seleccionar tipo de equipo-->
+            <div class="mb-3">
+                <label for="equipo" class="form-label">Seleccione equipo:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Notebook</option>
+                    <option value="1">Desktop</option>
+                    <option value="2">Otro (detallar)</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="tablas">
+        <!--Tabla de Asignación de Equipos-->
+        <h3> Información de Equipos Asignados </h3>
+        <table class="table table-bordered border-dark" id="tabla-asig">
+            <!--Cabeza de la tabla-->
+            <thead>
+                <tr>
+                    <!--Columnas de la tabla-->
+                    <th scope="col">Equipo/Periferico</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">S/N | Activo Fijo</th>
+                </tr>
+            </thead>
+            <!--Cuerpo de la tabla-->
+            <tbody>
+                <!--Primera Fila-->
+                <tr>
+                    <td>
+                        <!--Selector de opciones de equipo/periferico-->
+                        <select class="form-select" id="seleccion-asig-1">
+                            <option selected>Notebook</option>
+                            <option value="1">Desktop</option>
+                            <option value="2">All in One</option>
+                            <option value="3">Mouse</option>
+                            <option value="4">Teclado</option>
+                            <option value="5">Cargador</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Camara</option>
+                            <option value="8">Otro (detallar)</option>    
+                        </select>
+                    </td>
+                    <td>
+                        <!--Input para cantidad-->
+                        <input type="number" class="form-control" id="cantidad-asig-1">
+                    </td>
+                    <td>
+                        <!--Input para descripción-->
+                        <input type="string" class="form-control" id="descripción-asig-1">
+                    </td>
+                    <td>
+                        <!--Input para numero de serie o activo fijo-->
+                        <input type="string" class="form-control" id="sn-asig-1">
+                    </td>
+                </tr>
+                <!--Segunda Fila-->
+                <tr>
+                    <td>
+                        <select class="form-select" id="seleccion-asig-2">
+                            <option selected>Notebook</option>
+                            <option value="1">Desktop</option>
+                            <option value="2">All in One</option>
+                            <option value="3">Mouse</option>
+                            <option value="4">Teclado</option>
+                            <option value="5">Cargador</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Camara</option>
+                            <option value="8">Otro (detallar)</option>    
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="cantidad-asig-2">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="descripción-2">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="sn-asig-2">
+                    </td>
+                </tr>
+                <!--Tercera Fila-->
+                <tr>
+                    <td>
+                        <select class="form-select" id="seleccion-asig-3">
+                            <option selected>Notebook</option>
+                            <option value="1">Desktop</option>
+                            <option value="2">All in One</option>
+                            <option value="3">Mouse</option>
+                            <option value="4">Teclado</option>
+                            <option value="5">Cargador</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Camara</option>
+                            <option value="8">Otro (detallar)</option>    
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="cantidad-asig-3">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="descripción-3">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="sn-asig-3">
+                    </td>
+                </tr>
+                <!--Cuarta Fila-->
+                <tr>
+                    <td>
+                        <select class="form-select" id="seleccion-asig-4">
+                            <option selected>Notebook</option>
+                            <option value="1">Desktop</option>
+                            <option value="2">All in One</option>
+                            <option value="3">Mouse</option>
+                            <option value="4">Teclado</option>
+                            <option value="5">Cargador</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Camara</option>
+                            <option value="8">Otro (detallar)</option>    
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="cantidad-asig-4">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="descripción-4">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="sn-asig-4">
+                    </td>
+                </tr>
+                <!--Quinta Fila-->
+                <tr>
+                    <td>
+                        <select class="form-select" id="seleccion-asig-5">
+                            <option selected>Notebook</option>
+                            <option value="1">Desktop</option>
+                            <option value="2">All in One</option>
+                            <option value="3">Mouse</option>
+                            <option value="4">Teclado</option>
+                            <option value="5">Cargador</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Camara</option>
+                            <option value="8">Otro (detallar)</option>    
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="cantidad-asig-5">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="descripción-5">
+                    </td>
+                    <td>
+                        <input type="string" class="form-control" id="sn-asig-5">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Tabla de Devolución-->
+    <h3>Devolución de Equipo Asignado</h3>
+    <table class="table table-bordered border-dark" id="tabla-devo">
+        <thead>
+            <tr>
+                <th scope="col">Equipo/Periferico</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">S/N / Activo Fijo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Primera Fila-->
+            <tr>
+                <td>
+                    <select class="form-select" id="seleccion-devo-1">
+                        <option selected>Notebook</option>
+                        <option value="1">Desktop</option>
+                        <option value="2">All in One</option>
+                        <option value="3">Mouse</option>
+                        <option value="4">Teclado</option>
+                        <option value="5">Cargador</option>
+                        <option value="6">Monitor</option>
+                        <option value="7">Camara</option>
+                        <option value="8">Otro (detallar)</option>    
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="cantidad-devo-1">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="descripción-devo-1">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="sn-devo-1">
+                </td>
+            </tr>
+            <!--Segunda Fila-->
+            <tr>
+                <td>
+                    <select class="form-select" id="seleccion-devo-2">
+                        <option selected>Notebook</option>
+                        <option value="1">Desktop</option>
+                        <option value="2">All in One</option>
+                        <option value="3">Mouse</option>
+                        <option value="4">Teclado</option>
+                        <option value="5">Cargador</option>
+                        <option value="6">Monitor</option>
+                        <option value="7">Camara</option>
+                        <option value="8">Otro (detallar)</option>    
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="cantidad-devo-2">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="descripción-devo-2">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="sn-devo-2">
+                </td>
+            </tr>
+            <!--Tercera Fila-->
+            <tr>
+                <td>
+                    <select class="form-select" id="seleccion-devo-3">
+                        <option selected>Notebook</option>
+                        <option value="1">Desktop</option>
+                        <option value="2">All in One</option>
+                        <option value="3">Mouse</option>
+                        <option value="4">Teclado</option>
+                        <option value="5">Cargador</option>
+                        <option value="6">Monitor</option>
+                        <option value="7">Camara</option>
+                        <option value="8">Otro (detallar)</option>    
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="cantidad-devo-3">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="descripción-devo-3">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="sn-devo-3">
+                </td>
+            </tr>
+            <!--Cuarta Fila-->
+            <tr>
+                <td>
+                    <select class="form-select" id="seleccion-devo-4">
+                        <option selected>Notebook</option>
+                        <option value="1">Desktop</option>
+                        <option value="2">All in One</option>
+                        <option value="3">Mouse</option>
+                        <option value="4">Teclado</option>
+                        <option value="5">Cargador</option>
+                        <option value="6">Monitor</option>
+                        <option value="7">Camara</option>
+                        <option value="8">Otro (detallar)</option>    
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="cantidad-devo-4">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="descripción-devo-4">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="sn-devo-4">
+                </td>
+            </tr>
+            <!--Quinta Fila-->
+            <tr>
+                <td>
+                    <select class="form-select" id="seleccion-devo-5">
+                        <option selected>Notebook</option>
+                        <option value="1">Desktop</option>
+                        <option value="2">All in One</option>
+                        <option value="3">Mouse</option>
+                        <option value="4">Teclado</option>
+                        <option value="5">Cargador</option>
+                        <option value="6">Monitor</option>
+                        <option value="7">Camara</option>
+                        <option value="8">Otro (detallar)</option>    
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" id="cantidad-devo-5">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="descripción-devo-5">
+                </td>
+                <td>
+                    <input type="string" class="form-control" id="sn-devo-5">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Observaciones-->
+    <div id="observaciones-devo">
+        <h3>Observaciones (Estado del Equipo)</h3>
+        <textarea id="comentario" name="comentario"></textarea>
+    </div>
+    <h3>Firma y Entrega</h3>
+    <!--Campo para firma usuario-->
+            <div class="mb-3">
+                <!--Nombre del usuario-->
+                <label for="usuario">Usuario</label>
+                <input type="text">
+                <!--Cuadro Firma Usuario-->
+                <label for="firma-usu">Firma Usuario</label>
+                <canvas id="firma"></canvas>
+            </div>
+            <!--Campo para firma tecnico-->
+            <div class="mb-3">
+                <!--Nombre del tecnico-->
+                <label for="usuario">Tecnico</label>
+                <input type="text">
+                <!--Cuadro Firma Tecnico-->
+                <label for="firma-tec">Firma Tecnico</label>
+                <canvas id="firma"></canvas>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    <!--Envio de documento a correo-->
+    <div id="correo">
+        <h3>Envio de documento a</h3>
+        <label for="email">Correo UNAB</label>
+        <input type="email" name="email" id="email">
+
+        <label for="pass">Contraseña de Correo</label>
+        <input type="password" name="email" id="email">
+    </div>
+    <!--Pie de Pagina(footer)-->
+    <footer>
+        <div class="footer">
+            <p>Soporte TI - Todos los derechos reservados ©</p>
+        </div> 
+    </footer>
+</body>
+</html>
+<!--Script para pizarra de firma (canva)-->
+<script src="js/asignacion_equipo.js"></script>
+<!--Script de Bootstrap 5-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
