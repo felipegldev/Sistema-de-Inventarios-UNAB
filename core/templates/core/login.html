@@ -1,3 +1,6 @@
+{% load static %}
+
+<!--LOGIN-->
 <!DOCTYPE html>
 <html lang="en">
 <!--Metadatos-->
@@ -8,14 +11,14 @@
     <!--Hipervinculo de Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!--Hipervinculo de CSS-->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
 </head>    
 <!--Cuerpo de la pagina web-->
 <body>
     <!--Contenedor para el formulario-->
     <div class="login-container">
         <!--Logo UNAB-->
-        <img src="./img/logoUnab.jpg" alt="logo_unab" id="logo-login">
+        <img src="{% static 'core/img/logoUnab.jpg' %}" alt="logo_unab" id="logo-login">
         <!--Titulo-->
         <h2>Login</h2>
         <!--Formulario para Login-->
@@ -30,12 +33,12 @@
             <p id="mensaje" class="mt-3"></p>
             <!--Boton de Validación-->
             <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-primary" type="submit">Button</button>
+                <button class="btn btn-primary" type="submit" data-url="{% url 'home' %}" id="loginBtn">Ingresar</button>
             </div>
         </form>
     </div>
     <!--JavaScript de Login-->
-    <script src="./js/login.js"></script>
+    <script src="{% static 'core/js/login.js' %}"></script>
     <!--JavaScript de Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
