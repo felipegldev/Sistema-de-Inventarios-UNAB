@@ -8,7 +8,11 @@
 <body>
     <!--Navbar dinamico-->
     <nav>
-        
+        {% for item in navbar_items %}
+            <a href="{% url item.url %}">
+                {{ item.name }}
+            </a>
+        {% endfor %}
     </nav>
 </body>
 </html>
